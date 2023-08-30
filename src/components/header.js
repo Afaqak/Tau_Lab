@@ -16,14 +16,13 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const scale = 1 + scrollY * 0.0004;
+  const scale = 1 + scrollY * 0.0009;
 
   return (
-    <div className="h-[150vh] p-4 text-white px-16 relative bg-black">
-      {/* scale on scroll*/}
+    <div className="lg:h-[140vh] h-[100vh] overflow-hidden p-4 text-white px-4 lg:px-16 relative bg-black">
       <motion.div
         style={{ transform: `scale(${scale})` }}
-        className="h-full header-image w-full absolute bg-no-repeat flex items-center justify-center py-4 bg-contain top-0 left-0"
+        className="h-full header-image w-full absolute bg-no-repeat flex items-center justify-center py-4 top-0 left-0"
       ></motion.div>
       <Navbar />
       <div className="relative mt-24">
@@ -31,16 +30,16 @@ const Header = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          className="w-1/2 text-5xl leading-tight"
+          className="lg:w-1/2 text-3xl font-semibold lg:text-5xl leading-tight"
         >
           Pushing the Boundaries of Innovation
         </motion.h1>
-        <div className="w-1/2 mt-6">
+        <div className="lg:w-1/2 mt-6">
           <motion.p
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="text-2xl"
+            className="text-lg lg:text-2xl"
           >
             Welcome to Tau Lab. Our mission is to push the boundaries of
             innovation by leveraging our specialized LLM technology and advanced

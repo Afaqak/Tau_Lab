@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const Card = ({ bgImage, img, wColor, label, text, isGif }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0.3,
   });
 
   const cardVariants = {
@@ -15,7 +15,7 @@ export const Card = ({ bgImage, img, wColor, label, text, isGif }) => {
     visible: {
       x: 0,
       transition: {
-        duration: 0.5,
+        duration: 1,
         ease: "easeOut",
       },
     },
@@ -30,7 +30,7 @@ export const Card = ({ bgImage, img, wColor, label, text, isGif }) => {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
+        duration: 1,
         ease: "easeOut",
       },
     },
@@ -43,7 +43,7 @@ export const Card = ({ bgImage, img, wColor, label, text, isGif }) => {
     visible: {
       width: "100%",
       transition: {
-        duration: 0.6,
+        duration: 1,
         ease: "easeOut",
       },
     },
