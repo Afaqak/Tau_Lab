@@ -7,11 +7,69 @@
   background-position: top bottom;
   background-size: 100%;
 }
+.header2-image {
+  background-image: url("./assets/image-5.png");
+  background-position: top bottom;
+  background-size: 100%;
+}
+.header3-image {
+  background-image: url("./assets/image-25.png");
+  background-position: top right;
+  background-size: cover;
+}
+.header4-image {
+  background-image: url("./assets/image-33.png");
+  background-position: top left;
+  background-size: cover;
+}
+.header5-image {
+  background-image: url("./assets/image-44.png");
+  background-position: top left;
+  background-size: cover;
+}
+.header6-image {
+  background-image: url("./assets/image-55.png");
+  background-position: top left;
+  background-size: cover;
+}
+.header7-image {
+  background-image: url("./assets/image-66.png");
+  background-position: top right;
+  background-size: cover;
+}
+.header8-image {
+  background-image: url("./assets/image-88.png");
+  background-position: top right;
+  background-size: cover;
+}
+.header9-image {
+  background-image: url("./assets/image-99.png");
+  background-position: top right;
+  background-size: cover;
+}
+.header10-image {
+  background-image: url("./assets/image-22.png");
+  background-position: center;
+  background-size: cover;
+}
+.legal-image {
+  background-image: url("./assets/image-8.png");
+  background-position: top bottom;
+  background-size: 100%;
+}
 
 .banner_img {
-  background-image: url("./assets/image-5.png");
+  background-image: url("./assets/image-77.png");
 
   background-position: center;
   background-size: 150%;
   background-repeat: no-repeat;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }

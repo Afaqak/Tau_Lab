@@ -98,11 +98,11 @@ const AboutUs = () => {
             animate={inView1 ? "visible" : "hidden"}
             variants={cardVariants}
           >
-            <img
-              src={image14}
-              alt="image-14"
-              className="absolute h-full w-full top-0 left-0"
-            />
+            <div
+              className="absolute header4-image bg-no-repeat bg-cover
+         top-0 left-0 h-full w-full"
+              alt="image2"
+            ></div>
             <div className="relative">
               <img src={image3} alt="image-14" className="w-28 h-28" />
               <motion.div
@@ -137,11 +137,11 @@ const AboutUs = () => {
             variants={cardVariants}
             ref={ref2}
           >
-            <img
-              src={image10}
-              alt="image-10"
-              className="absolute h-full w-full top-0 left-0"
-            />
+            <div
+              className="absolute header6-image bg-no-repeat bg-cover
+         top-0 left-0 h-full w-full"
+              alt="image2"
+            ></div>
             <div className="relative">
               <img src={image13} alt="image-13" className="h-24 mb-2 w-20" />
               <motion.div
@@ -177,11 +177,11 @@ const AboutUs = () => {
           animate={inView3 ? "visible" : "hidden"}
           variants={card2Variants}
         >
-          <img
-            src={image9}
-            alt="image-10"
-            className="absolute h-full w-full top-0 left-0"
-          />
+          <div
+            className="absolute header5-image bg-no-repeat bg-cover
+         top-0 left-0 h-full w-full"
+            alt="image2"
+          ></div>
           <div className="relative">
             <img src={image11} alt="image-13" className="h-24 mb-2 w-20" />
             <motion.div
@@ -214,11 +214,11 @@ const AboutUs = () => {
           animate={inView4 ? "visible" : "hidden"}
           variants={card2Variants}
         >
-          <img
-            src={image16}
-            alt="image-10"
-            className="absolute h-full w-full top-0 left-0"
-          />
+          <div
+            className="absolute header7-image bg-no-repeat bg-cover
+         top-0 left-0 h-full w-full"
+            alt="image2"
+          ></div>
           <div className="relative">
             <img src={image15} alt="image-13" className="h-24 mb-2 w-20" />
             <motion.div

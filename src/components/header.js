@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/navbar";
 import Button from "../components/button";
 import { motion } from "framer-motion";
+import ThreeScene from "./threeScene";
 
 const Header = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -19,13 +20,16 @@ const Header = () => {
   const scale = 1 + scrollY * 0.0009;
 
   return (
-    <div className="lg:h-[140vh] h-[100vh] overflow-hidden p-4 text-white px-4 lg:px-16 relative bg-black">
-      <motion.div
+    <div className="lg:h-[140vh] h-[100vh] overflow-hidden p-4 text-white px-4 lg:px-16 relative ">
+      {/* <motion.div
         style={{ transform: `scale(${scale})` }}
         className="h-full header-image w-full absolute bg-no-repeat flex items-center justify-center py-4 top-0 left-0"
-      ></motion.div>
+      ></motion.div> */}
+      <div className="absolute w-full h-full top-0 left-0 z-50">
+        <ThreeScene />
+      </div>
       <Navbar />
-      <div className="relative mt-24">
+      {/* <div className="relative mt-48">
         <motion.h1
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -48,7 +52,7 @@ const Header = () => {
           </motion.p>
           <Button buttonStyle={"flex justify-end mt-10"} label={"Book Demo"} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -27,13 +27,13 @@ const Navbar = () => {
   return (
     <nav
       ref={navbarRef}
-      className={`z-50 py-4  flex items-center justify-between ${
+      className={`z-50 py-4 h-[10vh]  flex items-center justify-between ${
         isNavbarSticky
           ? "fixed top-0 left-0 px-4 lg:px-16 bg-black w-full"
-          : "relative"
+          : "absolute top-4 w-[90%] mx-auto"
       }`}
     >
-      <div className="font-bold tracking-[0.2em] text-white flex gap-3 items-center text-xl">
+      <div className="font-bold cursor-pointer tracking-[0.2em] text-white flex gap-3 items-center text-xl">
         <img
           src={Logo}
           alt="logo"
@@ -44,10 +44,18 @@ const Navbar = () => {
         <span>TAU</span>
         <span>LAB</span>
       </div>
-      <ul className={`md:flex gap-8 font-medium hidden md:flex-row`}>
-        <li>Career</li>
-        <li>Legal</li>
-        <li>Book Demo</li>
+      <ul
+        className={`md:flex gap-8 cursor-pointer transition-all duration-300 ease-out font-medium hidden md:flex-row`}
+      >
+        <li className="hover:text-orange-500 transition-all duration-300 ease-in-out">
+          Career
+        </li>
+        <li className="hover:text-orange-500 transition-all duration-300 ease-in-out">
+          Legal
+        </li>
+        <li className="hover:text-orange-500 transition-all duration-300 ease-in-out">
+          Book Demo
+        </li>
       </ul>
       <motion.div
         className={`md:hidden cursor-pointer text-white fixed right-6 z-[1000] top-13`}

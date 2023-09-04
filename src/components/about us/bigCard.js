@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import image2 from "../../assets/image-2.png";
+import image25 from "../../assets/image-25.png";
 import Logo from "../../assets/logo.svg";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -69,12 +69,12 @@ const BigCard = () => {
       ref={ref}
       className="h-[95%] transform -translate-y-14  px-6 py-6 relative lg:w-[37%] overflow-hidden"
     >
-      <img
+      <div
         style={{ transform: `scale(${scale})` }}
-        src={image2}
-        className="absolute top-0 left-0 h-full w-full"
+        className="absolute header3-image bg-no-repeat bg-cover
+         top-0 left-0 h-full w-full"
         alt="image2"
-      />
+      ></div>
       <div className="relative">
         <div className="font-bold tracking-[0.2em] text-white flex flex-col gap-3 items-center text-xl">
           <img

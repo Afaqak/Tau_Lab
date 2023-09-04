@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Logo from "../assets/logo.svg";
-import image1 from "../assets/image-1.png";
+import image99 from "../assets/image-99.png";
 import image15 from "../assets/image-15.png";
 import image12 from "../assets/image-12.png";
 
@@ -69,12 +69,17 @@ const Innovate = () => {
           transition={{ duration: 0.7 }}
           className="relative p-6 md:w-[55%] overflow-hidden transform -translate-y-16"
         >
-          <img
-            src={image1}
-            className="absolute top-0 left-0 w-full"
+          {/* <img
+            src={image99}
+            className="absolute top-0 left-0 object-cover w-full"
             alt="innovation image"
             style={{ transform: `scale(${scale})` }}
-          />
+          /> */}
+          <div
+            className="absolute top-0 left-0 header9-image h-full w-full"
+            alt="innovation image"
+            style={{ transform: `scale(${scale})` }}
+          ></div>
           <div className="relative text-white">
             <img src={Logo} alt="logo" className="h-20 w-20 mb-10" />
             <motion.h2
