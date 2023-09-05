@@ -25,20 +25,20 @@ const Header = () => {
         style={{ transform: `scale(${scale})` }}
         className="h-full header-image w-full absolute bg-no-repeat flex items-center justify-center py-4 top-0 left-0"
       ></motion.div> */}
-      <div className="absolute w-full h-full top-0 left-0 z-50">
+      <div className="absolute w-full h-screen top-0 left-0  z-50">
         <ThreeScene />
       </div>
       <Navbar />
-      {/* <div className="relative mt-48">
+      <div className="relative flex items-center justify-center flex-col mt-40 z-[1000] text-white">
         <motion.h1
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
-          className="lg:w-1/2 text-3xl font-semibold lg:text-5xl leading-tight"
+          className="lg:w-[60%] text-3xl font-semibold lg:text-5xl leading-tight"
         >
           Pushing the Boundaries of Innovation
         </motion.h1>
-        <div className="lg:w-1/2 mt-6">
+        <div className="lg:w-[60%] mt-6">
           <motion.p
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -52,7 +52,7 @@ const Header = () => {
           </motion.p>
           <Button buttonStyle={"flex justify-end mt-10"} label={"Book Demo"} />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
