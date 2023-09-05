@@ -28,11 +28,13 @@ const Coin = ({ position, color, rotation, size }) => {
       <mesh ref={coin}>
         <cylinderGeometry args={size} />
         <meshPhysicalMaterial
-          color={color} // Set to red
-          roughness={1}
-          clearcoat={1}
-          metalness={0.3}
-          reflectivity={1}
+          color={color} // Set the color you want
+          ref={material}
+          speed={2}
+          roughness={1} // Adjust roughness as needed
+          clearcoat={1} // Increase clearcoat for added metallic appearance
+          metalness={1.7} // Increase metalness to make it more metallic
+          reflectivity={1} // Set the reflectivity as needed
           fog="#c31fff"
         />
       </mesh>
@@ -91,13 +93,13 @@ const CustomContainer = () => {
       <Coin
         size={[8, 8, 2, 128]}
         position={[20, 11, 0]}
-        color="#475e97"
+        color="#a845ea"
         rotation={0.1}
       />
       <Coin
         size={[6, 6, 1.6, 128]}
         position={[-16, -3, -5]}
-        color="#643994"
+        color="#a845ea"
         rotation={-0.4}
       />
       <Coin
@@ -113,7 +115,8 @@ const CustomContainer = () => {
 const ThreeScene = () => {
   return (
     <Canvas shadows camera={{ position: [-3, -20, 20], fov: 50 }}>
-      <ambientLight intensity={4} color={"white"} />
+      {/* <pointLight intensity={4} position={[0, 10, 5]} /> */}
+      <ambientLight intensity={1} color={"#a845ea"} />
       <DirectionalLights />
       <CustomContainer />
       {/* <HtmlContent /> */}
