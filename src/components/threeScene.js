@@ -113,7 +113,7 @@ const CustomContainer = () => {
 const ThreeScene = () => {
   return (
     <Canvas shadows camera={{ position: [-3, -20, 20], fov: 50 }}>
-      <ambientLight intensity={2} color={"white"} />
+      <ambientLight intensity={4} color={"white"} />
       <DirectionalLights />
       <CustomContainer />
       {/* <HtmlContent /> */}

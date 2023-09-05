@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import Logo from "../assets/logo.svg";
+import { Link } from "react-router-dom"; // Import Link from React Router if you're using it.
 
 const Navbar = () => {
   const [isNavbarSticky, setIsNavbarSticky] = useState(false);
@@ -33,28 +34,31 @@ const Navbar = () => {
           : "absolute top-4 w-[90%] mx-auto"
       }`}
     >
-      <div className="font-bold cursor-pointer tracking-[0.2em] text-white flex gap-3 items-center text-xl">
-        <img
-          src={Logo}
-          alt="logo"
-          className=" w-10 h-10"
-          width={200}
-          height={200}
-        />
-        <span>TAU</span>
-        <span>LAB</span>
+      <div className="font-bold cursor-pointer tracking-[0.2em] text-white flex gap-3 items-center text-2xl">
+        <Link className="flex gap-3 items-center" to="/">
+          {" "}
+          <img
+            src={Logo}
+            alt="logo"
+            className="w-14 h-14"
+            width={200}
+            height={200}
+          />
+          <span>TAU</span>
+          <span>LAB</span>
+        </Link>
       </div>
       <ul
         className={`md:flex gap-8 cursor-pointer transition-all duration-300 ease-out font-medium hidden md:flex-row`}
       >
         <li className="hover:text-orange-500 transition-all duration-300 ease-in-out">
-          Career
+          <Link to="/career">Career</Link>{" "}
         </li>
         <li className="hover:text-orange-500 transition-all duration-300 ease-in-out">
-          Legal
+          <Link to="/legal">Legal</Link>{" "}
         </li>
         <li className="hover:text-orange-500 transition-all duration-300 ease-in-out">
-          Book Demo
+          <Link to="/book-demo">Book Demo</Link>{" "}
         </li>
       </ul>
       <motion.div
@@ -81,9 +85,15 @@ const Navbar = () => {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex w-full h-full justify-end ">
           <div className="bg-black  rounded-lg -mt-10 flex items-center justify-center w-full">
             <ul className="mt-4 space-y-2 text-[#8A8A8A] gap-4 flex flex-col text-4xl">
-              <li>Career</li>
-              <li>Legal</li>
-              <li>Book Demo</li>
+              <li>
+                <Link to="/career">Career</Link>{" "}
+              </li>
+              <li>
+                <Link to="/legal">Legal</Link>{" "}
+              </li>
+              <li>
+                <Link to="/book-demo">Book Demo</Link>{" "}
+              </li>
             </ul>
           </div>
         </div>
