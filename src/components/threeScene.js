@@ -5,11 +5,13 @@ import {
   Stage,
   useCubeTexture,
   useTexture,
+  Plane,
 } from "@react-three/drei";
-import { OrbitControls, Html } from "@react-three/drei";
+import { OrbitControls, Html, MeshWobbleMaterial } from "@react-three/drei";
 import { TextureLoader, CubeTextureLoader } from "three";
 import Button from "./button";
 import { motion } from "framer-motion";
+import image1 from "../assets/image-1.png";
 
 const Coin = ({ position, color, rotation, size }) => {
   const coin = useRef(null);
@@ -107,12 +109,23 @@ const CustomContainer = () => {
   );
 };
 
+const Background = () => {
+  const texture = useTexture(image1);
+  return (
+    <mesh rotation={[0.8, 0, 0.1]} position={[3, 18, -20]}>
+      <planeGeometry args={[80, 50]} />
+      <MeshWobbleMaterial speed={0.4} factor={0.2} map={texture} />
+    </mesh>
+  );
+};
+
 const ThreeScene = () => {
   return (
     <Canvas shadows camera={{ position: [-3, -20, 20], fov: 50 }}>
       {/* <pointLight intensity={4} position={[0, 10, 5]} /> */}
       <ambientLight intensity={1.2} color={"#a845ea"} />
       <DirectionalLights />
+      <Background />
       <CustomContainer />
       {/* <HtmlContent /> */}
       <OrbitControls />
