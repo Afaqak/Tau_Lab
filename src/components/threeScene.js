@@ -33,7 +33,7 @@ const Coin = ({ position, color, rotation, size }) => {
           speed={2}
           roughness={1} // Adjust roughness as needed
           clearcoat={1} // Increase clearcoat for added metallic appearance
-          metalness={1.7} // Increase metalness to make it more metallic
+          metalness={1.5} // Increase metalness to make it more metallic
           reflectivity={1} // Set the reflectivity as needed
           fog="#c31fff"
         />
@@ -66,16 +66,11 @@ const DirectionalLights = () => {
       <directionalLight
         key={i}
         position={[x, y, z]}
-        intensity={14}
+        intensity={24}
         color={color}
         castShadow
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
-        shadow-camera-far={50}
-        shadow-camera-left={-5}
-        shadow-camera-right={5}
-        shadow-camera-top={5}
-        shadow-camera-bottom={-5}
       />
     );
   }
@@ -94,19 +89,19 @@ const CustomContainer = () => {
         size={[8, 8, 2, 128]}
         position={[20, 11, 0]}
         color="#a845ea"
-        rotation={0.1}
+        rotation={-0.3}
       />
       <Coin
         size={[6, 6, 1.6, 128]}
         position={[-16, -3, -5]}
         color="#a845ea"
-        rotation={-0.4}
+        rotation={0.6}
       />
       <Coin
         size={[8, 8, 2, 128]}
         position={[-18, 22, -5]}
         color="#a845ea"
-        rotation={-0.4}
+        rotation={0.4}
       />
     </group>
   );
@@ -116,7 +111,7 @@ const ThreeScene = () => {
   return (
     <Canvas shadows camera={{ position: [-3, -20, 20], fov: 50 }}>
       {/* <pointLight intensity={4} position={[0, 10, 5]} /> */}
-      <ambientLight intensity={1} color={"#a845ea"} />
+      <ambientLight intensity={1.2} color={"#a845ea"} />
       <DirectionalLights />
       <CustomContainer />
       {/* <HtmlContent /> */}
