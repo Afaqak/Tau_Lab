@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Logo from "../assets/logo.svg";
-import image99 from "../assets/image-99.png";
 import image15 from "../assets/image-15.png";
 import image12 from "../assets/image-12.png";
 

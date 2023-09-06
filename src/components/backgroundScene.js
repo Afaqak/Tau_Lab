@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useTexture, MeshDistortMaterial } from "@react-three/drei";
 
-import image1 from "../assets/image-77.png";
+import image1 from "../assets/image-77.jpg";
 
 const Background = () => {
   const texture = useTexture(image1);
