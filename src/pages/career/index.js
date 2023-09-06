@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../../components/navbar";
 import image4 from "../../assets/image-4.gif";
+import Footer from "../../components/footer";
 const Career = () => {
   const [scrollY, setScrollY] = useState(0);
 
@@ -18,7 +19,7 @@ const Career = () => {
   const scale = 1 + scrollY * 0.0009;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black">
       <div className="lg:h-[80vh] flex items-center md:h-[40vh] h-[50vh] overflow-hidden p-4 text-white px-4 lg:px-16 relative bg-black">
         <motion.div
           style={{ transform: `scale(${scale})` }}
@@ -167,6 +168,7 @@ const Career = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -3,7 +3,7 @@ import Logo from "../assets/logo.svg";
 
 const Footer = () => {
   return (
-    <div className="text-white items-center flex lg:flex-row flex-col justify-between mt-28 mb-10 px-4 lg:px-16">
+    <div className="text-white border-t border-gray-800 border-opacity-70 bg-black py-10 items-center flex lg:flex-row flex-col justify-between px-4 lg:px-10">
       <div className="flex gap-6 item lg:text-left text-center flex-col lg:flex-row">
         <div className="">
           <div className="font-bold tracking-[0.2em] text-white flex gap-3 items-center text-xl">

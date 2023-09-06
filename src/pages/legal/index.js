@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../components/navbar";
 import { motion } from "framer-motion";
+import Footer from "../../components/footer";
 const Legal = () => {
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
@@ -15,7 +16,7 @@ const Legal = () => {
   }, []);
   const scale = 1 + scrollY * 0.0009;
   return (
-    <div className="min-h-screen overflow-hidden">
+    <div className="min-h-screen bg-black overflow-hidden">
       <div className=" lg:h-[100vh] md:h-[50vh] h-[80vh]  overflow-hidden p-4 text-white px-4 lg:px-16 relative bg-black">
         <Navbar />
         <motion.div
@@ -1396,6 +1397,7 @@ const Legal = () => {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

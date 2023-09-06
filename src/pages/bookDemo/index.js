@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../../components/navbar";
+import Footer from "../../components/footer";
 
 const BookDemo = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -184,6 +185,7 @@ const BookDemo = () => {
             </div>
           </form>
         </div>
+        <Footer />
       </div>
     </>
   );

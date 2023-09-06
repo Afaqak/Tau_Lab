@@ -67,11 +67,11 @@ const BigCard = () => {
   return (
     <motion.div
       ref={ref}
-      className="md:h-[95%] h-fit transform md:-translate-y-14  px-6 py-10 relative lg:w-[37%] overflow-hidden"
+      className="md:h-screen h-fit transform  px-6 py-9 relative lg:w-[90%] xl:w-[45%] overflow-hidden"
     >
       <div
         style={{ transform: `scale(${scale})` }}
-        className="absolute header3-image bg-no-repeat bg-cover
+        className="absolute header3-image bg-no-repeat bg-right-top bg-cover
          top-0 left-0 h-full w-full"
         alt="image2"
       ></div>

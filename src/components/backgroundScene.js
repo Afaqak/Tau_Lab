@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useTexture, MeshDistortMaterial } from "@react-three/drei";
 
@@ -30,8 +30,9 @@ const BackgroundScene = () => {
     <Canvas shadows camera={{ position: [-3, -20, 20], fov: 50 }}>
       <ambientLight intensity={1.2} color={"white"} />
       <ambientLight intensity={1.2} color={"white"} />
-
-      <Background />
+      <Suspense fallback={null}>
+        <Background />
+      </Suspense>
     </Canvas>
   );
 };

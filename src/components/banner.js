@@ -21,7 +21,7 @@ const Banner = () => {
 
   return (
     <motion.div
-      className="banner_img py-10  flex items-center justify-center md:h-screen overflow-y-hidden"
+      className="banner_img py-10  flex items-center justify-center md:h-screen mb-6 md:mb-0 overflow-y-hidden"
       style={{ backgroundPositionX }}
     >
       <div className="text-white font-semibold lg:font-normal text-3xl lg:text-7xl w-[80%] lg:w-[65%] text-center italic">

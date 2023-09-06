@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Logo from "../assets/logo.svg";
-import image15 from "../assets/image-15.png";
-import image12 from "../assets/image-12.png";
+import image15 from "../assets/gem-2.gif";
+import image12 from "../assets/gem-1.gif";
 
 const part1Variant = {
   hidden: { opacity: 0, translateY: -30 },
@@ -58,7 +58,7 @@ const Innovate = () => {
 
   return (
     <div className="min-h-screen ">
-      <div className="px-4 lg:px-16 transform flex lg:flex-row flex-col">
+      <div className="px-4 lg:px-10 transform flex lg:flex-row flex-col">
         {/* part1 */}
         <motion.div
           ref={refPart1}
@@ -126,7 +126,11 @@ const Innovate = () => {
           className="text-white px-8 lg:w-[40%] bg-black transform -translate-y-16 py-20"
         >
           <div className="mb-4">
-            <img src={image12} className="w-14 mb-2" alt="innovation icon" />
+            <img
+              src={image12}
+              className="w-28 -ml-4 mb-2"
+              alt="innovation icon"
+            />
             <motion.h1
               initial="hidden"
               animate={inViewPart2 ? "visible" : ""}
@@ -149,7 +153,11 @@ const Innovate = () => {
           </div>
 
           <div className="mb-4">
-            <img src={image15} className="w-14 mb-2" alt="innovation icon" />
+            <img
+              src={image15}
+              className="w-24 -ml-4 mb-2"
+              alt="innovation icon"
+            />
             <motion.h1
               initial="hidden"
               animate={inViewPart2 ? "visible" : ""}
