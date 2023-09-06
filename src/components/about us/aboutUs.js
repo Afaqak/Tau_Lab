@@ -129,7 +129,7 @@ const AboutUs = () => {
                 variants={textVariants}
                 viewport={{ once: true }}
               >
-                <h2 className="white text-white pb-2 text-xl font-bold">
+                <h2 className="white text-[#889CE7] pb-2 text-xl font-bold">
                   Generative Multi-Agent System
                 </h2>
                 <p className="font-semibold text-lg text-white pb-6">
@@ -171,7 +171,7 @@ const AboutUs = () => {
               whileInView={"visible"}
               variants={textVariants}
             >
-              <h2 className="white text-white pb-2 text-xl font-bold">
+              <h2 className="white text-[#889CE7] pb-2 text-xl font-bold">
                 Cloud Gaming Platform
               </h2>
               <p className="font-bold text-white pb-6 text-lg">
@@ -210,7 +210,7 @@ const AboutUs = () => {
               whileInView={"visible"}
               variants={textVariants}
             >
-              <h2 className="white text-white pb-2 text-xl font-bold">
+              <h2 className="white text-[#889CE7] pb-2 text-xl font-bold">
                 Expertise in Gaming
               </h2>
               <p className="font-bold text-white pb-6 text-lg">
