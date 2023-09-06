@@ -30,13 +30,13 @@ const Coin = ({ position, color, rotation, size }) => {
       <mesh ref={coin}>
         <cylinderGeometry args={size} />
         <meshPhysicalMaterial
-          color={color} // Set the color you want
+          color={color}
           ref={material}
           speed={2}
-          roughness={1} // Adjust roughness as needed
-          clearcoat={1} // Increase clearcoat for added metallic appearance
-          metalness={1.5} // Increase metalness to make it more metallic
-          reflectivity={1} // Set the reflectivity as needed
+          roughness={1}
+          clearcoat={1}
+          metalness={1.5}
+          reflectivity={1}
           fog="#c31fff"
         />
       </mesh>
@@ -112,7 +112,7 @@ const CustomContainer = () => {
 const Background = () => {
   const texture = useTexture(image1);
   return (
-    <mesh rotation={[0.8, 0, 0.1]} position={[3, 18, -20]}>
+    <mesh rotation={[0.8, 0, 0.1]} position={[3, 18n, -20]}>
       <planeGeometry args={[80, 50]} />
       <MeshWobbleMaterial speed={0.4} factor={0.2} map={texture} />
     </mesh>

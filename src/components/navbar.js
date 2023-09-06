@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navbarRef}
-      className={`z-50 py-4 h-[10vh]  flex items-center justify-between ${
+      className={`py-4 h-[10vh] z-[2000]  flex items-center justify-between ${
         isNavbarSticky
           ? "fixed top-0 left-0 px-4 lg:px-16 bg-black w-full"
           : "absolute top-4 w-[90%] mx-auto"
@@ -62,7 +62,7 @@ const Navbar = () => {
         </li>
       </ul>
       <motion.div
-        className={`md:hidden cursor-pointer text-white fixed right-6 z-[1000] top-13`}
+        className={`md:hidden cursor-pointer text-white fixed right-6 z-[3000] top-13`}
         onClick={handleMobileMenuToggle}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -82,7 +82,7 @@ const Navbar = () => {
         ></motion.div>
       </motion.div>
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex w-full h-full justify-end ">
+        <div className="fixed inset-0 bg-black z-[2000]  bg-opacity-75 flex w-full h-full justify-end ">
           <div className="bg-black  rounded-lg -mt-10 flex items-center justify-center w-full">
             <ul className="mt-4 space-y-2 text-[#8A8A8A] gap-4 flex flex-col text-4xl">
               <li>

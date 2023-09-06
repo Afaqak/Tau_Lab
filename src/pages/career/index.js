@@ -19,18 +19,18 @@ const Career = () => {
 
   return (
     <div className="min-h-screen">
-      <div className=" h-fit lg:h-[80vh] overflow-hidden p-4 text-white px-4 lg:px-16 relative bg-black">
+      <div className="lg:h-[80vh] flex items-center md:h-[40vh] h-[50vh] overflow-hidden p-4 text-white px-4 lg:px-16 relative bg-black">
         <motion.div
           style={{ transform: `scale(${scale})` }}
           className="h-full header2-image w-full absolute bg-cover bg-no-repeat flex items-center justify-center py-4 top-0 left-0"
         ></motion.div>
         <Navbar />
-        <div className="relative mt-24 lg:mt-48">
+        <div className="relative mt-7">
           <motion.h1
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="lg:w-[70%] font-medium text-2xl lg:text-6xl"
+            className="md:w-[70%] lg:w-[70%] font-medium text-2xl md:text-4xl lg:text-6xl"
           >
             Revolutionize Your Career with Tau Lab's Cutting-Edge Technology
             Teams
@@ -140,7 +140,7 @@ const Career = () => {
         </div>
       </div>
       <div className="bg-black flex py-24 items-center  w-full justify-center z-50">
-        <div className=" text-white flex-col md:flex-row w-[80%] min-h-80 border border-[#8A8A8A] mx-auto flex items-center">
+        <div className=" text-white flex-col lg:flex-row w-[80%] min-h-80 border border-[#8A8A8A] mx-auto flex items-center">
           <div className="lg:w-[30%] border-b text-lg py-10 flex lg:border-r border-[#8A8A8A] items-center justify-center">
             <img src={image4} className=" h-60 w-60 " alt="diamond" />
           </div>

@@ -87,10 +87,10 @@ const AboutUs = () => {
   });
 
   return (
-    <div className="bg-black flex px-4 lg:px-12 gap-4 items-center min-h-screen  lg:pb-10">
+    <div className="bg-black flex px-4 lg:px-12 gap-4 lg:flex-row flex-col items-center mb-6 md:min-h-screen  lg:pb-10">
       <BigCard />
       <div className="lg:ml-8 md:flex hidden">
-        <div className="md:flex hidden flex-col gap-10 transform ">
+        <div className="md:flex  hidden md:flex-row lg:flex-col gap-10 transform ">
           <motion.div
             className="relative px-6 py-4 pb-8 w-60 overflow-hidden"
             ref={ref1}
@@ -169,7 +169,7 @@ const AboutUs = () => {
           </motion.div>
         </div>
       </div>
-      <div className="md:flex hidden flex-col gap-10 transform translate-y-16 ml-10">
+      <div className="md:flex hidden md:flex-row lg:flex-col gap-10 transform translate-y-16 ml-10">
         <motion.div
           ref={ref3}
           className="relative px-6 py-4 pb-8 w-60 overflow-hidden"

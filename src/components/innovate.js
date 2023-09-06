@@ -34,7 +34,7 @@ const Innovate = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const scale = 0.4 + scrollY * 0.0004;
+  const scale = 0.4 + scrollY * 0.0006;
   console.log(scale);
 
   const [refPart1, inViewPart1] = useInView({
@@ -67,28 +67,26 @@ const Innovate = () => {
           animate={inViewPart1 ? "visible" : ""}
           variants={part1Variant}
           transition={{ duration: 0.7 }}
-          className="relative p-6 md:w-[55%] overflow-hidden transform -translate-y-16"
+          className="relative p-6 lg:w-[55%] overflow-hidden transform -translate-y-16"
         >
-          {/* <img
-            src={image99}
-            className="absolute top-0 left-0 object-cover w-full"
-            alt="innovation image"
-            style={{ transform: `scale(${scale})` }}
-          /> */}
           <div
             className="absolute top-0 left-0 header9-image h-full w-full"
             alt="innovation image"
             style={{ transform: `scale(${scale})` }}
           ></div>
           <div className="relative text-white">
-            <img src={Logo} alt="logo" className="h-20 w-20 mb-10" />
+            <img
+              src={Logo}
+              alt="logo"
+              className="md:h-20 h-16 w-16 mb-6 lg:mb-10"
+            />
             <motion.h2
               ref={refText1}
               initial="hidden"
               animate={inViewText1 ? "visible" : ""}
               variants={textVariant}
               transition={{ duration: 0.6 }}
-              className="text-3xl font-medium mb-10"
+              className="md:text-3xl text-2xl font-medium mb-6 lg:mb-10"
             >
               Ready to Innovate?
             </motion.h2>
@@ -98,7 +96,7 @@ const Innovate = () => {
               animate={inViewText2 ? "visible" : ""}
               variants={textVariant}
               transition={{ duration: 0.6 }}
-              className="text-[1.55rem] leading-[2.3rem] mb-10"
+              className="text-xl md:text-[1.55rem] leading-[2.3rem] mb-6 lg:mb-10"
             >
               At Tau Lab, we aim to make a significant impact through our
               expertise in gaming and the innovative application of language

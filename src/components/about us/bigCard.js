@@ -67,7 +67,7 @@ const BigCard = () => {
   return (
     <motion.div
       ref={ref}
-      className="h-[95%] transform -translate-y-14  px-6 py-6 relative lg:w-[37%] overflow-hidden"
+      className="md:h-[95%] h-fit transform md:-translate-y-14  px-6 py-10 relative lg:w-[37%] overflow-hidden"
     >
       <div
         style={{ transform: `scale(${scale})` }}
@@ -76,11 +76,11 @@ const BigCard = () => {
         alt="image2"
       ></div>
       <div className="relative">
-        <div className="font-bold tracking-[0.2em] text-white flex flex-col gap-3 items-center text-xl">
+        <div className="font-bold md:py-24 lg:py-0  tracking-[0.2em] text-white flex flex-col gap-3 items-center text-xl">
           <img
             src={Logo}
             alt="logo"
-            className=" w-28 h-28"
+            className=" md:w-28 w-20 h-20 md:h-28"
             width={200}
             height={200}
           />
@@ -92,12 +92,12 @@ const BigCard = () => {
             TAU LAB
           </span>
         </div>
-        <div className="text-white mt-6">
+        <div className="text-white mt-4">
           <motion.h1
             initial="hidden"
             variants={variant}
             animate={inView ? "visible" : "hidden"}
-            className="text-3xl font-medium mb-4"
+            className="text-2xl md:text-3xl font-medium mb-4"
           >
             About Tau Lab
           </motion.h1>
@@ -105,7 +105,7 @@ const BigCard = () => {
             initial="hidden"
             variants={paragraphVariant}
             animate={inView ? "visible" : "hidden"}
-            className="text-[1.60rem] leading-[2.8rem]"
+            className="text-xl md:text-[1.60rem] leading-[2.8rem]"
           >
             Tau Lab is a technology company dedicated to driving innovation and
             excellence in the gaming industry. We specialize in LLM technology

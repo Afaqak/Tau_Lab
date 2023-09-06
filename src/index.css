@@ -10,7 +10,7 @@
 .header2-image {
   background-image: url("./assets/image-5.png");
   background-position: top bottom;
-  background-size: 100%;
+  background-size: cover;
 }
 .header3-image {
   background-image: url("./assets/image-25.png");
@@ -55,7 +55,7 @@
 .legal-image {
   background-image: url("./assets/image-8.png");
   background-position: top bottom;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .banner_img {

@@ -1,17 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../../components/navbar";
 import { motion } from "framer-motion";
 const Legal = () => {
+  const [scrollY, setScrollY] = useState(0);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  const scale = 1 + scrollY * 0.0009;
   return (
-    <div className="min-h-screen">
-      <div className=" h-[100vh]  overflow-hidden p-4 text-white px-4 lg:px-16 relative bg-black">
+    <div className="min-h-screen overflow-hidden">
+      <div className=" lg:h-[100vh] md:h-[50vh] h-[80vh]  overflow-hidden p-4 text-white px-4 lg:px-16 relative bg-black">
         <Navbar />
         <motion.div
-          // style={{ transform: `scale(${scale})` }}
+          style={{ transform: `scale(${scale})` }}
           className="h-full legal-image w-full absolute bg-no-repeat flex items-center justify-center py-4 top-0 left-0"
         ></motion.div>
         <div className="mt-32">
-          <div className="relative mt-48 bg-black bg-opacity-75 border-2 border-gray-200 p-4 rounded-md mx-auto w-[70%]">
+          <div className="relative mt-48 bg-black bg-opacity-75 border-2 border-gray-200 p-4 rounded-md mx-auto md:w-[80%] lg:w-[70%]">
             <motion.h1
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -36,15 +48,15 @@ const Legal = () => {
           </div>
         </div>
       </div>
-      <main className=" transform bg-black text-white">
-        <h1 className="bg-black text-4xl -translate-y-16 h-16 py-4 px-4  text-white bg-opacity-40">
+      <main className=" transform  bg-black text-white">
+        <h1 className="bg-black text-3xl lg:text-4xl mb-4 lg:mb-0 lg:-translate-y-16 lg:h-16 py-4 px-4  text-white bg-opacity-40">
           Tau Lab Terms & Conditions
         </h1>
-        <p className="px-4 text-2xl -translate-y-10">
+        <p className="px-4 text-xl lg:text-2xl mb-4 lg:mb-0 lg:-translate-y-10">
           Last Updated: Aug 16th, 2023
         </p>
         <div className="bg-black px-4">
-          <div className="w-[80%]">
+          <div className="md:w-[80%]">
             <div className="flex gap-4 flex-col">
               <h1 className="font-bold text-2xl">1. Introduction</h1>
               <p className="text-xl">
