@@ -110,9 +110,9 @@ const Innovate = () => {
               className="text-xl leading-10"
             >
               At Tau Lab, we offer cutting-edge technology solutions for the
-              gaming industry. Our services include LLM technology, generative
-              multi-agent systems, cloud gaming platforms, and expert gaming
-              consulting.
+              gaming industry. Our services include LLM-Powered game play
+              mechanics, Al integration for Next-gen IP, Empowering gamers with
+              Al, and Custom Al Development Solutions
             </motion.p>
           </div>
         </motion.div>

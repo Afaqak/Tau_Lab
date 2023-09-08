@@ -107,10 +107,10 @@ const BigCard = () => {
             animate={inView ? "visible" : "hidden"}
             className="text-xl md:text-[1.60rem] leading-[2.8rem]"
           >
-            At Tau Lab, we aim to make a significant impact through our
-            expertise in gaming and the innovative application of language
-            models. Tau Lab is revolutionizing gaming and pushing the boundaries
-            of LLM technology.
+            At Tau Lab, we are dedicated to leveraging our expertise in gaming
+            and pioneering the creative use of language models. Our mission is
+            to drive a profound transformation in the gaming industry while
+            continually advancing the capabilities of LLM technology.
           </motion.p>
         </div>
       </div>

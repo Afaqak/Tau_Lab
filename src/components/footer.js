@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../assets/logo.svg";
+import LinkedIn from "../assets/linkedin (2).svg";
 
 const Footer = () => {
   return (
@@ -20,11 +21,14 @@ const Footer = () => {
           <ul className="text-xl">
             <li className="text-2xl font-medium mt-4 mb-2">Contact Us</li>
             <li>info@taulab.ai</li>
-            <li>https://www.linkedin.com/company/taulabai</li>
+            <li>press@taulab.ai</li>
           </ul>
         </div>
         <div className="font-md text-xl font-medium mt-2">
           <h1>Follow us on</h1>
+          <div className="bg-gray-500 w-7 h-7 rounded-full flex mt-4 cursor-pointer items-center justify-center">
+            <img src={LinkedIn} alt="LinkedIn" className="w-4 h-4" />
+          </div>
         </div>
       </div>
       <div className="text-xl text-center">
