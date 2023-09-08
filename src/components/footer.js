@@ -19,8 +19,8 @@ const Footer = () => {
           </div>
           <ul className="text-xl">
             <li className="text-2xl font-medium mt-4 mb-2">Contact Us</li>
-            <li>info$tailab.com</li>
-            <li>info$tailab.com</li>
+            <li>info@taulab.ai</li>
+            <li>https://www.linkedin.com/company/taulabai</li>
           </ul>
         </div>
         <div className="font-md text-xl font-medium mt-2">

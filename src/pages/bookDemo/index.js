@@ -1,10 +1,59 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
+import emailjs from "@emailjs/browser";
 
 const BookDemo = () => {
   const [scrollY, setScrollY] = useState(0);
+  const form = useRef();
+  const initialState = {
+    lastName: "",
+    companyName: "",
+    workEmail: "",
+    jobTitle: "",
+    phoneNumber: "",
+    inspiration: "",
+    game: "",
+    agree: "",
+  };
+  const [formData, setFormData] = useState(initialState);
+  const handleInputChange = (e) => {
+    console.log(formData, "form");
+    const { name, value, type, checked } = e.target;
+    console.log(name, value, type, checked);
+    if (type === "radio") {
+      if (checked) {
+        setFormData({
+          ...formData,
+          [name]: value,
+        });
+        console.log(formData);
+      }
+    } else {
+      const newValue = type === "checkbox" ? checked : value;
+      setFormData({
+        ...formData,
+        [name]: newValue,
+      });
+    }
+  };
+  const isFormValid = () => {
+    if (
+      !formData.lastName ||
+      !formData.companyName ||
+      !formData.workEmail ||
+      !formData.jobTitle ||
+      !formData.phoneNumber ||
+      !formData.agree
+    ) {
+      alert("Please fill out all required fields.");
+      return false;
+    }
+
+    return true;
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -15,6 +64,30 @@ const BookDemo = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    if (!isFormValid()) {
+      return;
+    }
+
+    emailjs
+      .sendForm(
+        "service_5z1pqsn",
+        "template_jumr9jc",
+        form.current,
+        "mTWOaQgkTleIcWy3n"
+      )
+      .then(
+        (result) => {
+          alert("data sent");
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   const scale = 1 + scrollY * 0.0009;
 
   return (
@@ -35,7 +108,7 @@ const BookDemo = () => {
             >
               Request Demo
             </motion.h1>
-            <div className="md:w-[80%] lg:w-1/2 mt-6 flex flex-col gap-4  md:gap-10 lg:gap-16">
+            <div className="md:w-[80%] lg:w-1/2 text-white mt-6 flex flex-col gap-4  md:gap-10 lg:gap-16">
               <motion.p
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -59,11 +132,13 @@ const BookDemo = () => {
           <h2 class="text-center text-3xl font-bold flex justify-start text-white mb-4 ">
             Demo Form
           </h2>
-          <form>
+          <form onSubmit={sendEmail} ref={form}>
             <div class="grid grid-cols-1 text-[#8A8A8A] text-sm md:grid-cols-2  gap-4">
               <div class="mb-4">
                 <label class="block text-[#8A8A8A] mb-2">Last Name</label>
                 <input
+                  onChange={handleInputChange}
+                  name="lastName"
                   type="text"
                   className="form-input w-full bg-black text-sm px-3 py-4 rounded-md focus:outline-slate-900 otlin border-[#8A8A8A] border"
                 />
@@ -71,6 +146,8 @@ const BookDemo = () => {
               <div className="mb-4">
                 <label className="block mb-2">Company Name</label>
                 <input
+                  onChange={handleInputChange}
+                  name="companyName"
                   type="text"
                   className="form-input w-full bg-black text-sm px-3 py-4 rounded-md focus:outline-slate-900 otlin border-[#8A8A8A] border"
                 />
@@ -78,6 +155,8 @@ const BookDemo = () => {
               <div className="mb-4">
                 <label className="block mb-2">Work Email</label>
                 <input
+                  onChange={handleInputChange}
+                  name="workEmail"
                   type="email"
                   className="form-input w-full bg-black text-sm px-3 py-4 rounded-md focus:outline-slate-900 otlin border-[#8A8A8A] border"
                 />
@@ -85,6 +164,8 @@ const BookDemo = () => {
               <div className="mb-4">
                 <label className="block mb-2">Job Title</label>
                 <input
+                  onChange={handleInputChange}
+                  name="jobTitle"
                   type="text"
                   className="form-input w-full bg-black text-sm px-3 py-4 rounded-md focus:outline-slate-900 otlin border-[#8A8A8A] border"
                 />
@@ -92,6 +173,8 @@ const BookDemo = () => {
               <div className="mb-4">
                 <label className="block mb-2">Phone Number</label>
                 <input
+                  onChange={handleInputChange}
+                  name="phoneNumber"
                   type="tel"
                   className="form-input w-full bg-black text-sm px-3 py-4 rounded-md focus:outline-slate-900 otlin border-[#8A8A8A] border"
                 />
@@ -101,85 +184,75 @@ const BookDemo = () => {
               <label className="block text-[#8A8A8A] text-sm mb-2">
                 Inspiration Unveiled
               </label>
-              <textarea
-                className="form-input w-full bg-black text-sm px-3 py-4 rounded-md focus:outline-slate-900 otlin border-[#8A8A8A] border"
-                rows="4"
+              <input
+                name="inspiration"
+                onChange={handleInputChange}
+                placeholder="Please describe your game creation insights, timeline, development cycle, and more..."
+                className="form-input placeholder:text-[#8A8A8A]  flex h-28 text-[#8A8A8A] items-center border-[#8A8A8A] w-[90%] justify-center placeholder:text-center bg-black px-8 py-4 rounded-md focus:outline-slate-900 otlin  border"
               />
             </div>
-            <div className="mb-4 ml-4">
+            <div className="mb-4">
               <label className="block ">Game Tab</label>
               <div className="grid grid-cols-1 gap-2 text-[#8A8A8A]">
-                <div className="flex items-center">
-                  <input
-                    class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-4 w-4 appearance-none rounded-full border-2 border-solid border-[#8A8A8A] before:pointer-events-none before:absolute before:h-3 before:w-3 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-3 after:w-3 after:rounded-full after:content-[''] checked:border-[#8A8A8A] checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.5rem] checked:after:w-[0.55rem] checked:after:rounded-full checked:after:border-[#8A8A8A] checked:after:bg-[#8A8A8A] checked:after:scale-90 checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]   "
-                    type="radio"
-                    name="flexRadioDefault"
-                    id="radioDefault01"
-                  />
-                  <label className="ml-2 " for="game1">
-                    Game 1
-                  </label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-4 w-4 appearance-none rounded-full border-2 border-solid border-[#8A8A8A] before:pointer-events-none before:absolute before:h-3 before:w-3 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-3 after:w-3 after:rounded-full after:content-[''] checked:border-[#8A8A8A] checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.5rem] checked:after:w-[0.55rem] checked:after:rounded-full checked:after:border-[#8A8A8A] checked:after:bg-[#8A8A8A] checked:after:scale-90 checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]   "
-                    type="radio"
-                    name="flexRadioDefault"
-                    id="radioDefault01"
-                  />
-                  <label className="ml-2" for="game2">
-                    Game 2
-                  </label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-4 w-4 appearance-none rounded-full border-2 border-solid border-[#8A8A8A] before:pointer-events-none before:absolute before:h-3 before:w-3 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-3 after:w-3 after:rounded-full after:content-[''] checked:border-[#8A8A8A] checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.5rem] checked:after:w-[0.55rem] checked:after:rounded-full checked:after:border-[#8A8A8A] checked:after:bg-[#8A8A8A] checked:after:scale-90 checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]   "
-                    type="radio"
-                    name="flexRadioDefault"
-                    id="radioDefault01"
-                  />
-                  <label className="ml-2" for="game5">
-                    Game 3
-                  </label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-4 w-4 appearance-none rounded-full border-2 border-solid border-[#8A8A8A] before:pointer-events-none before:absolute before:h-3 before:w-3 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-3 after:w-3 after:rounded-full after:content-[''] checked:border-[#8A8A8A] checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.5rem] checked:after:w-[0.55rem] checked:after:rounded-full checked:after:border-[#8A8A8A] checked:after:bg-[#8A8A8A] checked:after:scale-90 checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]   "
-                    type="radio"
-                    name="flexRadioDefault"
-                    id="radioDefault01"
-                  />
-                  <label className="ml-2" for="game5">
-                    Game 4
-                  </label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-4 w-4 appearance-none rounded-full border-2 border-solid border-[#8A8A8A] before:pointer-events-none before:absolute before:h-3 before:w-3 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-3 after:w-3 after:rounded-full after:content-[''] checked:border-[#8A8A8A] checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.5rem] checked:after:w-[0.55rem] checked:after:rounded-full checked:after:border-[#8A8A8A] checked:after:bg-[#8A8A8A] checked:after:scale-90 checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]   "
-                    type="radio"
-                    name="flexRadioDefault"
-                    id="radioDefault01"
-                  />
-                  <label className="ml-2" for="game5">
-                    Game 5
-                  </label>
-                </div>
-                <div className="lg:w-[80%] flex">
-                  <input
-                    class="relative float-left -ml-[1.5rem] mr-1 mt-0.5 h-4 w-[2rem] lg:w-[1.05rem] md:w-[1.25rem] appearance-none rounded-full border-2 border-solid border-[#8A8A8A] before:pointer-events-none before:absolute before:h-3 before:w-3 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-3 after:w-3 after:rounded-full after:content-[''] checked:border-[#8A8A8A] checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.5rem] checked:after:w-[0.55rem] checked:after:rounded-full checked:after:border-[#8A8A8A] checked:after:bg-[#8A8A8A] checked:after:scale-90 checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]   "
-                    type="radio"
-                    name="flexRadioDefault"
-                    id="radioDefault01"
-                  />
-                  <label className="ml-2 -mt-1" for="game5">
-                    I agree to receive communications from tau labs in
-                    accordance with tau labs privacy policies
-                  </label>
-                </div>
+                <CustomRadioButton
+                  name="game"
+                  value="RPG"
+                  id={"game1"}
+                  checked={formData.game === "RPG"}
+                  onChange={handleInputChange}
+                  label="RPG"
+                />
+
+                <CustomRadioButton
+                  name="game"
+                  id={"game2"}
+                  value="SLG"
+                  checked={formData.game === "SLG"}
+                  onChange={handleInputChange}
+                  label="SLG"
+                />
+                <CustomRadioButton
+                  name="game"
+                  value="MMO"
+                  id={"game3"}
+                  checked={formData.game === "MMO"}
+                  onChange={handleInputChange}
+                  label="MMO"
+                />
+                <CustomRadioButton
+                  name="game"
+                  value="SandBox"
+                  checked={formData.game === "SandBox"}
+                  onChange={handleInputChange}
+                  label="SandBox"
+                  id={"game4"}
+                />
+                <CustomRadioButton
+                  name="game"
+                  value="other"
+                  id={"game5"}
+                  checked={formData.game === "other"}
+                  onChange={handleInputChange}
+                  label="Other..."
+                />
+
+                <CustomRadioButton
+                  radioStyle="mt-4"
+                  name="agree"
+                  type="checkbox"
+                  id={"agree"}
+                  checked={formData.agree === true}
+                  onChange={handleInputChange}
+                  label=" I agree to receive communications from tau labs in
+                  accordance with tau labs privacy policies"
+                />
               </div>
             </div>
             <div className="mt-6">
-              <button className="bg-blue-500 text-2xl text-white font-bold hover:bg-black transition-all duration-300 ease-in-out border-2 rounded-full border-white border-w px-16 py-2 min-w-[30%] -ml-4">
+              <button
+                type="submit"
+                className="bg-blue-500 text-2xl text-white font-bold hover:bg-black transition-all duration-300 ease-in-out border-2 rounded-full border-white border-w px-16 py-2 min-w-[30%] -ml-4"
+              >
                 Submit
               </button>
             </div>
@@ -192,3 +265,43 @@ const BookDemo = () => {
 };
 
 export default BookDemo;
+
+const CustomRadioButton = ({
+  radioStyle,
+  id,
+  name,
+  value,
+  checked,
+  type = "radio",
+  onChange,
+  label,
+}) => {
+  return (
+    <div className={`flex ${radioStyle} relative items-center`}>
+      <input
+        hidden
+        type={type}
+        name={name}
+        id={id}
+        value={value}
+        checked={checked}
+        onChange={onChange}
+      />
+      <div className="relative cursor-pointer">
+        <label
+          htmlFor={id}
+          className="w-4 h-4 border-2 block border-solid border-[#8A8A8A] rounded-full"
+        ></label>
+        {checked && (
+          <label
+            htmlFor={id}
+            className="absolute block top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#8A8A8A] rounded-full"
+          ></label>
+        )}
+      </div>
+      <label className="ml-2 cursor-pointer" htmlFor={id}>
+        {label}
+      </label>
+    </div>
+  );
+};

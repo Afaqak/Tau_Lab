@@ -97,10 +97,10 @@ const Innovate = () => {
               transition={{ duration: 0.6 }}
               className="text-xl md:text-[1.55rem] leading-[2.3rem] mb-6 lg:mb-10"
             >
-              At Tau Lab, we aim to make a significant impact through our
-              expertise in gaming and the innovative application of language
-              models. Tau Lab is revolutionizing gaming and pushing the
-              boundaries of LLM technology.
+              "Unite with top-tier gaming partners to forge a timeless
+              masterpiece that redefines gaming history. Join us on an
+              extraordinary journey into the next generation of gaming
+              excellence!"
             </motion.p>
             <motion.p
               initial="hidden"

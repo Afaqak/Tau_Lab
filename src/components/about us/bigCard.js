@@ -107,9 +107,10 @@ const BigCard = () => {
             animate={inView ? "visible" : "hidden"}
             className="text-xl md:text-[1.60rem] leading-[2.8rem]"
           >
-            Tau Lab is a technology company dedicated to driving innovation and
-            excellence in the gaming industry. We specialize in LLM technology
-            and advanced generative multi-agent systems.
+            At Tau Lab, we aim to make a significant impact through our
+            expertise in gaming and the innovative application of language
+            models. Tau Lab is revolutionizing gaming and pushing the boundaries
+            of LLM technology.
           </motion.p>
         </div>
       </div>

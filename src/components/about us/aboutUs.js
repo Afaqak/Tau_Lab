@@ -6,7 +6,6 @@ import image11 from "../../assets/gem-2.gif";
 import image13 from "../../assets/gem-3.gif";
 import image15 from "../../assets/gem-4.gif";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 const AboutUs = () => {
   const cardVariants = {
@@ -68,7 +67,7 @@ const AboutUs = () => {
       <div className="lg:ml-8 mt-4 md:flex hidden">
         <div className="md:flex  hidden md:flex-row xl:flex-col gap-20 xl:gap-10 transform ">
           <motion.div
-            className="relative rounded px-6 pt-12 pb-16 w-72 overflow-hidden"
+            className="relative rounded px-4 pt-8 pb-10 w-72 overflow-hidden"
             initial="hidden"
             whileInView={"visible"}
             viewport={{ once: true }}
@@ -89,12 +88,13 @@ const AboutUs = () => {
                 variants={textVariants}
               >
                 <h2 className="#889CE7 text-[#889CE7] pb-2 text-xl font-bold">
-                  LLM Technology
+                  Empowering Gaming
                 </h2>
-                <p className="font-semibold text-white text-lg pb-6">
-                  Our proprietary LLM technology drives the next generation of
-                  gaming, allowing for unparalleled immersion and player
-                  experiences.
+                <p className="font-semibold text-white pb-6">
+                  Our Unleashed Services: LLM-Powered Gameplay Mechanics – We
+                  integrate LLM and a dynamic multi-agent approach to bring
+                  games to life. We infuse games with meaningful narratives and
+                  instill profound values, creating unique gaming experiences
                 </p>
                 <motion.div
                   style={{ backgroundColor: "#889CE7" }}
@@ -109,7 +109,7 @@ const AboutUs = () => {
           </motion.div>
 
           <motion.div
-            className="relative rounded px-6 pt-12 pb-16 w-72 overflow-hidden"
+            className="relative rounded px-4 pt-8 pb-10 w-72 overflow-hidden"
             initial="hidden"
             whileInView={"visible"}
             variants={cardVariants}
@@ -130,11 +130,14 @@ const AboutUs = () => {
                 viewport={{ once: true }}
               >
                 <h2 className="white text-[#889CE7] pb-2 text-xl font-bold">
-                  Generative Multi-Agent System
+                  Integration for Next-Gen IP
                 </h2>
-                <p className="font-semibold text-lg text-white pb-6">
-                  Our advanced generative multi-agent system ensures dynamic and
-                  engaging gameplay that keeps players coming back for more.
+                <p className="font-semibold text-white pb-6">
+                  With meticulous optimization and precise alignment of
+                  storylines, dialogues, and values, we empower game developers
+                  to create diverse, dynamic content IP characters. Unlock
+                  unparalleled gameplay experiences tailored to your unique
+                  characters.
                 </p>
                 <motion.div
                   style={{ backgroundColor: "white" }}
@@ -151,7 +154,7 @@ const AboutUs = () => {
       </div>
       <div className="md:flex hidden md:flex-row xl:flex-col gap-20 xl:gap-10 mb-4 xl:mb-0 transform translate-y-16 ml-10">
         <motion.div
-          className="relative rounded px-6 pt-12 pb-16 w-72 overflow-hidden"
+          className="relative rounded px-4 pt-8 pb-10 w-72 overflow-hidden"
           initial="hidden"
           whileInView={"visible"}
           viewport={{ once: true }}
@@ -172,11 +175,13 @@ const AboutUs = () => {
               variants={textVariants}
             >
               <h2 className="white text-[#889CE7] pb-2 text-xl font-bold">
-                Cloud Gaming Platform
+                Empowering Gamers with AI
               </h2>
-              <p className="font-bold text-white pb-6 text-lg">
-                Our cloud gaming platform delivers high-performance gaming
-                experiences anytime, anywhere.
+              <p className="font-semibold text-white pb-6">
+                We leverage LLM to empower gamers, offering guidance on
+                gameplay, mechanics, and fostering player-game connections. Our
+                efforts enrich gaming experiences, drive development efficiency,
+                and fuel innovation in game mechanics.
               </p>
               <motion.div
                 style={{ backgroundColor: "#9333ea" }}
@@ -190,7 +195,7 @@ const AboutUs = () => {
           </div>
         </motion.div>
         <motion.div
-          className="relative rounded px-6 pt-12 pb-16 w-72 overflow-hidden"
+          className="relative rounded px-4 pt-12 pb-16 w-72 overflow-hidden"
           initial="hidden"
           viewport={{ once: true }}
           whileInView={"visible"}
@@ -213,7 +218,7 @@ const AboutUs = () => {
               <h2 className="white text-[#889CE7] pb-2 text-xl font-bold">
                 Expertise in Gaming
               </h2>
-              <p className="font-bold text-white pb-6 text-lg">
+              <p className="font-semibold text-white pb-6 ">
                 Our team of gaming experts is dedicated to delivering the best
                 possible gaming experiences to our customers.
               </p>
