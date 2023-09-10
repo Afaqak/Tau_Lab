@@ -34,7 +34,7 @@ const Footer = () => {
       <ul className="text-center flex flex-col mb-4 cursor-pointer">
         <li className="font-semibold mt-4 mb-2">Legal</li>
         <Link to={"/privacy"}>Privacy Policy</Link>
-        <Link to="/terms-of-use">Terms Of Use</Link>
+        <Link to="/terms-and-services">Terms and Services</Link>
       </ul>
 
       <div className="text-center">

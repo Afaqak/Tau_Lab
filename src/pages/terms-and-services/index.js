@@ -32,7 +32,7 @@ const Legal = () => {
               transition={{ duration: 1 }}
               className="mx-auto text-3xl lg:text-6xl leading-tight"
             >
-              Website Terms of Service
+              Terms and Services
             </motion.h1>
             <div className=" mx-auto mt-6 flex flex-col gap-16">
               <motion.p
