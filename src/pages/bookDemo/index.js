@@ -55,6 +55,7 @@ const BookDemo = () => {
   };
 
   useEffect(() => {
+    window.scrollTo({ top: 0 });
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };

@@ -7,6 +7,7 @@ const Career = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
+    window.scrollTo({ top: 0 });
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
