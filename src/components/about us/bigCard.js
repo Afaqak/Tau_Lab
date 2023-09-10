@@ -67,7 +67,7 @@ const BigCard = () => {
   return (
     <motion.div
       ref={ref}
-      className="md:h-screen h-fit transform  px-6 py-9 relative lg:w-[90%] xl:w-[45%] overflow-hidden"
+      className="md:min-h-screen h-fit transform  px-6 py-8 pb-16 relative lg:w-[90%] xl:w-[45%] overflow-hidden"
     >
       <div
         style={{ transform: `scale(${scale})` }}
@@ -107,10 +107,11 @@ const BigCard = () => {
             animate={inView ? "visible" : "hidden"}
             className="text-xl md:text-[1.60rem] leading-[2.8rem]"
           >
-            At Tau Lab, we are dedicated to leveraging our expertise in gaming
-            and pioneering the creative use of language models. Our mission is
-            to drive a profound transformation in the gaming industry while
-            continually advancing the capabilities of LLM technology.
+            At Tau Lab, we are devoted to harnessing our gaming expertise and
+            pioneering inventive applications of language models and multi-agent
+            systems. Our mission is to catalyze a profound transformation in the
+            gaming industry while consistently driving innovation in LLM
+            technology
           </motion.p>
         </div>
       </div>

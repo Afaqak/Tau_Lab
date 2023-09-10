@@ -99,16 +99,16 @@ const BookDemo = () => {
             style={{ transform: `scale(${scale})` }}
             className="h-full header10-image w-full absolute bg-no-repeat flex items-center justify-center py-4 top-0 left-0"
           ></motion.div>
-          <div className="relative mt-8">
+          <div className="relative  w-full  mt-8">
             <motion.h1
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
-              className="lg:w-1/2 text-3xl mt-6 font-medium md:text-4xl lg:text-6xl leading-tight"
+              className="lg:w-1/2 mx-auto text-3xl mt-6 font-medium md:text-4xl lg:text-6xl leading-tight"
             >
               Request Demo
             </motion.h1>
-            <div className="md:w-[80%] lg:w-1/2 text-white mt-6 flex flex-col gap-4  md:gap-10 lg:gap-16">
+            <div className="md:w-[80%] mx-auto lg:w-1/2 text-white mt-6 flex flex-col gap-4  md:gap-10 lg:gap-16">
               <motion.p
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
