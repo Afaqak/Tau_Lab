@@ -17,7 +17,7 @@ const Privacy = () => {
   }, []);
   const scale = 1 + scrollY * 0.0009;
   return (
-    <div className="bg-black text-white overflow-hidden">
+    <div className="bg-black text-white overflow-hidden pb-4">
       <div className=" lg:h-[100vh] md:h-[50vh] h-[80vh]  overflow-hidden p-4 text-white px-4 lg:px-16 relative bg-black">
         <Navbar />
         <motion.div

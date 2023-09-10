@@ -87,9 +87,6 @@ const Navbar = () => {
                 <Link to="/career">Career</Link>{" "}
               </li>
               <li>
-                <Link to="/legal">Legal</Link>{" "}
-              </li>
-              <li>
                 <Link to="/book-demo">Book Demo</Link>{" "}
               </li>
             </ul>

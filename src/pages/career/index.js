@@ -142,7 +142,7 @@ const Career = () => {
         </div>
       </div>
       <div className="bg-black flex py-24 items-center  w-full justify-center z-50">
-        <div className=" text-white flex-col lg:flex-row w-[80%] min-h-80 border border-[#8A8A8A] mx-auto flex items-center">
+        <div className=" text-white flex-col lg:flex-row w-[90%]  md:w-[80%] min-h-80 border border-[#8A8A8A] mx-auto flex items-center">
           <div className="lg:w-[30%] border-b text-lg py-10 flex lg:border-r border-[#8A8A8A] items-center justify-center">
             <img src={image4} className=" h-60 w-60 " alt="diamond" />
           </div>
