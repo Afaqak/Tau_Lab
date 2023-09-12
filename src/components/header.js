@@ -6,6 +6,7 @@ import BackgroundScene from "./backgroundScene";
 import gem1 from "../assets/gem-1.gif";
 import gem2 from "../assets/gem-2.gif";
 import gem3 from "../assets/gem-3.gif";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -92,7 +93,12 @@ const Header = () => {
             generative multi-agent system, pioneering the next generation of
             gaming.
           </motion.p>
-          <Button buttonStyle={"flex justify-end mt-10"} label={"Book Demo"} />
+          <Link to="/book-demo" className="block">
+            <Button
+              buttonStyle={"flex justify-end mt-10"}
+              label={"Book Demo"}
+            />
+          </Link>{" "}
         </div>
       </div>
     </div>
