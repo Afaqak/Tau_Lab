@@ -27,9 +27,16 @@ const Footer = () => {
       </div>
       <div className="font-semibold flex md:items-start items-center flex-col justify-center mt-2">
         <h1>Follow us on</h1>
-        <div className="bg-gray-500 w-7 h-7 rounded-full flex mt-4 cursor-pointer items-center justify-center">
-          <img src={LinkedIn} alt="LinkedIn" className="w-4 h-4" />
-        </div>
+        <a
+          href="https://www.linkedin.com/company/taulabai/about/"
+          className="block"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="bg-gray-500 w-7 h-7 rounded-full flex mt-4 cursor-pointer items-center justify-center">
+            <img src={LinkedIn} alt="LinkedIn" className="w-4 h-4" />
+          </div>
+        </a>
       </div>
       <ul className="text-center flex flex-col mb-4 cursor-pointer">
         <li className="font-semibold mt-4 mb-2">Legal</li>
