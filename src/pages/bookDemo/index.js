@@ -74,8 +74,8 @@ const BookDemo = () => {
 
     emailjs
       .sendForm(
-        "service_5z1pqsn",
-        "template_jumr9jc",
+        "service_0lnywle",
+        "template_jumr9jc", //template id
         form.current,
         "mTWOaQgkTleIcWy3n"
       )

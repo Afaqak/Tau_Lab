@@ -163,7 +163,14 @@ const Career = () => {
                 Learn More
               </button>
               <button className="py-1 hover:bg-orange-700 hover:border-orange-700 transition-all duration-300 ease-in-out rounded-full px-2 border-2 border-white">
-                Apply Here
+                <a
+                  href="https://www.linkedin.com/company/taulabai/about/"
+                  className="block"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Apply Here
+                </a>
               </button>
             </div>
           </div>
