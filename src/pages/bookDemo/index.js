@@ -74,10 +74,10 @@ const BookDemo = () => {
 
     emailjs
       .sendForm(
-        "service_0lnywle",
+        "service_0lnywle", //service_id
         "template_jumr9jc", //template id
         form.current,
-        "mTWOaQgkTleIcWy3n"
+        "mTWOaQgkTleIcWy3n" //public_key
       )
       .then(
         (result) => {
