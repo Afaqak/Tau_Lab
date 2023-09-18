@@ -64,10 +64,10 @@ const AboutUs = () => {
   return (
     <div className="bg-black flex px-4 py-4 lg:px-12 gap-4 xl:flex-row flex-col items-center mb-6 md:min-h-screen  lg:pb-10">
       <BigCard />
-      <div className="lg:ml-8 mt-4 md:flex hidden">
-        <div className="md:flex  hidden md:flex-row xl:flex-col gap-20 xl:gap-10 transform ">
+      <div className="lg:ml-8 mt-4 md:flex ">
+        <div className="md:flex  md:flex-row xl:flex-col gap-20 xl:gap-10 transform ">
           <motion.div
-            className="relative rounded px-4 pt-8 pb-10 w-72 overflow-hidden"
+            className="relative rounded mb-4 md:mb-0 px-4 pt-8 pb-10 w-72 overflow-hidden"
             initial="hidden"
             whileInView={"visible"}
             viewport={{ once: true }}
@@ -153,9 +153,9 @@ const AboutUs = () => {
           </motion.div>
         </div>
       </div>
-      <div className="md:flex hidden md:flex-row xl:flex-col gap-20 xl:gap-10 mb-4 xl:mb-0 transform translate-y-16 ml-10">
+      <div className="md:flex  xl:flex-col gap-20 xl:gap-10 mb-4 xl:mb-0 transform md:translate-y-16 md:ml-10">
         <motion.div
-          className="relative rounded px-4 pt-8 pb-10 w-72 overflow-hidden"
+          className="relative rounded px-4 pt-8 pb-10 w-72 overflow-hidden mb-4 md:mb-0"
           initial="hidden"
           whileInView={"visible"}
           viewport={{ once: true }}

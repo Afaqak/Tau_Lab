@@ -16,7 +16,7 @@ const Banner = () => {
     };
   }, []);
 
-  const backgroundPositionX = `-${scrollY * 0.12}px`;
+  const backgroundPositionX = `${scrollY * 0.028}%`;
   console.log(backgroundPositionX);
 
   return (
