@@ -300,7 +300,7 @@ const Privacy = () => {
         </div>
         <div className="flex gap-4 flex-col mb-4">
           <h1 className="font-bold text-2xl">
-            4. PROCESS OF PERSONAL INFORMATION OF RESIDENTS IN EEA:
+            4. SHARING OF PERSONAL INFORMATION:
           </h1>
           <p className="text-2xl">
             We will share Personal Information with the following categories of
@@ -416,7 +416,7 @@ const Privacy = () => {
             </li>
           </ul>
 
-          <span>
+          <span className="text-xl">
             With your consent, some of Tau Lab’s business partners (such as
             advertisers) may use cookies on the Platform. Tau Lab has no access
             to or control over these cookies. This Policy covers the use of
@@ -425,7 +425,7 @@ const Privacy = () => {
             Third-party E-Commerce Websites or third party social media
             platforms to which the Website provides links.
           </span>
-          <span>
+          <span className="text-xl">
             Most web browsers allow you to manage cookies through the browser
             settings. Be aware that, if you opt out from and do not agree to
             certain cookies, your experience on our Website may be diminished
@@ -434,7 +434,7 @@ const Privacy = () => {
             or www.allaboutcookies.org.
           </span>
         </div>
-        <div className="flex gap-4 flex-col mb-4">
+        <div className="flex gap-4 mt-4 flex-col mb-4">
           <h1 className="font-bold text-2xl">6. DATA SECURITY:</h1>
           <p className="text-xl">
             We maintain administrative, technical and physical safeguards that

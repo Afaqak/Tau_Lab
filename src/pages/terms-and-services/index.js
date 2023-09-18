@@ -832,27 +832,29 @@ const Legal = () => {
             </div>
             <div className="flex gap-4 flex-col mt-4">
               <h1 className="font-bold text-2xl">22. Governing Law</h1>
-              <p className="text-2xl"></p>
-              These Terms of Use and your use of the Sites are governed by and
-              construed in accordance with the laws of the State of California
-              applicable to agreements made and to be entirely performed within
-              the State of California, without regard to its conflict of law
-              principles. 23. Electronic Communications and Contact Information
-              Tau Lab may be required to provide User with certain disclosures,
-              notices and communications (collectively, “Communications”) in
-              written form. User agrees to receive all Communications regarding
-              its use of any of the Services, including without limitation
-              through the Services, electronically instead of in paper form.
-              User’s consent to electronic Communications is valid until User
-              revokes it. However, consent to electronic Communications is a
-              condition of the Services, and if User revokes its consent, User
-              will no longer be permitted to use the Services. User agrees it is
-              responsible for keeping its e-mail address registered with Tau Lab
-              accurate and up to date.
+              <p className="text-xl">
+                These Terms of Use and your use of the Sites are governed by and
+                construed in accordance with the laws of the State of California
+                applicable to agreements made and to be entirely performed
+                within the State of California, without regard to its conflict
+                of law principles. 23. Electronic Communications and Contact
+                Information Tau Lab may be required to provide User with certain
+                disclosures, notices and communications (collectively,
+                “Communications”) in written form. User agrees to receive all
+                Communications regarding its use of any of the Services,
+                including without limitation through the Services,
+                electronically instead of in paper form. User’s consent to
+                electronic Communications is valid until User revokes it.
+                However, consent to electronic Communications is a condition of
+                the Services, and if User revokes its consent, User will no
+                longer be permitted to use the Services. User agrees it is
+                responsible for keeping its e-mail address registered with Tau
+                Lab accurate and up to date.
+              </p>
             </div>
           </div>
         </div>
-        <div className="px-4">
+        <div className="px-4 mb-4">
           <p className="text-xl mt-4">
             You may contact us by emailing us at ceciliashen@TauLab.ai
           </p>
